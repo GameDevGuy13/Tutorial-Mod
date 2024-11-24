@@ -38,7 +38,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops()));
+                    .strength(2f).noLootTable()));
 
 
     //Prepares to register block as an item and a block that can be seen in world
