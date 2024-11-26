@@ -1,6 +1,7 @@
 package net.gamedevguy13.tutorialmod.block;
 
 import net.gamedevguy13.tutorialmod.TutorialMod;
+import net.gamedevguy13.tutorialmod.block.custom.AlexandriteLampBlock;
 import net.gamedevguy13.tutorialmod.block.custom.MagicBlock;
 import net.gamedevguy13.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -65,6 +66,10 @@ public class ModBlocks {
     public static final RegistryObject<TrapDoorBlock> ALEXANDRITE_TRAPDOOR = registerBlock("alexandrite_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.IRON,
                     BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
+            () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
 
     //Prepares to register block as an item and a block that can be seen in world
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
